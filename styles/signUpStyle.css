@@ -1,0 +1,22 @@
+body{
+    background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 255, 0, 0.4), 
+      rgba(0, 255, 0, 0.4)
+    ),
+    /* bottom, image */
+    url(../assets/background.jpg);
+    background-size: cover;
+}
+
+.form-div{
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 2%;
+}
+
+.cont-form-div{
+    background-color: rgba(0,0,0,0.5);
+    margin: 20px auto;
+    border-radius: 2%;
+}

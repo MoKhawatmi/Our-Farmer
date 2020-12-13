@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>مُزارعنا</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="./styles/style.css" rel="stylesheet" type="text/css">
+    <link href="./styles/addServiceStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <script src="./scripts/includeHeader.js" charset="UTF-8"></script>
+
+    <main>
+
+        <div class="form-div pt-4">
+            <h2 class="text-white text-center">تعديل بيانات الحساب</h2>
+
+            <div class="d-flex text-white justify-content-center">
+                <form id="edit-form" class="form-div my-5 pt-5 w-50" method="POST">
+
+                    <div class="form-group row justify-content-center">
+                        <input class="col-sm-4 form-control border border-success" id="name" type="text" name="name">
+                        <label class="col-sm-3 font-weight-bold" for="name">الاسم الاول</label>
+                        <br />
+                    </div>
+
+                    <div class="form-group row justify-content-center">
+                        <input class="col-sm-4 form-control border border-success" id="lname" type="text" name="lname">
+                        <label class="col-sm-3 font-weight-bold" for="lname">الاسم الاخير</label>
+                        <br />
+                    </div>
+
+                    <div class="form-group row justify-content-center">
+                        <input class="col-sm-4 form-control border border-success" id="pass" type="password" name="pass">
+                        <label class="col-sm-3 font-weight-bold" for="pass">كلمة المرور</label>
+                        <br /></div>
+
+                    <div class="form-group row justify-content-center">
+                        <input class="col-sm-4 form-control border border-success" id="repass" type="password"
+                            name="repass">
+                        <label class="col-sm-3 font-weight-bold" for="repass">اعد كتابة كلمة المرور</label>
+                        <br /></div>
+
+                    <div class="form-group row justify-content-center">
+                        <input class="col-sm-4 form-control border border-success" id="area" type="text" name="area">
+                        <label class="col-sm-3 font-weight-bold" for="area">المنطقة</label>
+                        <br /></div>
+
+                    <div class="form-group row justify-content-center">
+                        <input class="col-sm-4 form-control border border-success" id="age" type="number" name="age">
+                        <label class="col-sm-3 font-weight-bold" for="age">العمر</label>
+                        <br /></div>
+
+                    <div class="form-group text-center">
+                        <input type="submit" class="btn btn-primary w-25 font-weight-bold" value="تعديل">
+                    </div>
+                    
+
+                    <button class="btn btn-danger font-weight-bold m-3" onclick="deleteProfile(event)">اغلاق
+                        الحساب</button>
+                    </form>
+
+            </div>
+    </main>
+    <script src="./scripts/includeFooter.js" charset="UTF-8"></script>
+    
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD25gi67vTq8h3_2Go0f5ixKIqDaf-lHH0",
+    authDomain: "graduation-project-4b211.firebaseapp.com",
+    databaseURL: "https://graduation-project-4b211.firebaseio.com",
+    projectId: "graduation-project-4b211",
+    storageBucket: "graduation-project-4b211.appspot.com",
+    messagingSenderId: "469421901926",
+    appId: "1:469421901926:web:d33e6e1088ba3f8e1e05a7",
+    measurementId: "G-CJS7KWJ2B9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db=firebase.firestore();
+</script>
+
+    <script src="./scripts/deleteProfile.js" charset="UTF-8"></script>
+    <script src="./scripts/editProfileScripts.js"></script>
+
+</body>

@@ -1,0 +1,12 @@
+.messages{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+}
+
+.answer{
+    background-color: #008888;
+}

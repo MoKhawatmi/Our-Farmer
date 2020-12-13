@@ -1,0 +1,29 @@
+i{
+    color: black;
+}
+i:hover{
+    color: red;
+    cursor: pointer;
+}
+
+/* .stars li:hover{
+    color: orange;
+    cursor: pointer;
+} */
+
+.checked{
+    color: orange;
+    cursor: pointer;
+}
+
+.review-item{
+    background-color: #008888;
+}
+
+#star{
+    cursor: pointer;
+}
+
+.red-color{
+    color: red !important;
+}

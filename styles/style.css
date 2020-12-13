@@ -1,0 +1,64 @@
+
+a[class="nav-link text-white"]:hover{
+    color: black !important;
+}
+
+.border-light{
+    transition: ease 0.5s;
+}
+
+.border-light:hover{
+    background-color: white !important;
+}
+
+.tron-img{
+    width: 100%;
+    height: 400px;
+}
+
+.img-sizing{
+    width: 200px;
+    height: 200px;
+}
+
+.img-item{
+    width: 80%;
+    height: 200px;
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+}
+
+input[type="search"] {
+    width: 500px !important;
+  }
+
+  button[type="submit"]{
+    width: 20% !important;
+  }
+
+
+#footer-ul{
+    list-style-type: none;
+}
+.link{
+    cursor: pointer;
+}
+
+.seperator{
+    width: 100%;
+    height: 60px;
+
+}
+
+.consultant-image{
+    width: 217px;
+    height: 217px;
+}
+
+.profile-image{
+    width: 100%;
+    height: 270px;
+}

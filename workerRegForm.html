@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>مُزارعنا</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="./styles/style.css" rel="stylesheet" type="text/css">
+        <link href="./styles/signUpStyle.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+
+        <div class="cont-form-div w-75  py-3">
+            <h5 class="text-white text-center">!مرحبا بك! ما زلنا نحتاج بعض المعلومات لاكمال تسجيلك</h5>
+            
+            <form id="workerForm" method="POST">
+
+                <div class="form-group text-center my-3">
+                    <label class="text-white font-weight-bold" for="exp">هل لديك خبرات سابقة؟ اذكرها</label>
+                    <textarea class="d-block mx-auto border border-success" id="exp" name="exp" cols="40" rows="7"></textarea>
+                </div>
+
+                <div class="form-group text-center my-3">
+                    <label class="text-white font-weight-bold" for="projects">هل قمت بمشاريع من قبل؟ اذكرها</label>
+                    <textarea class="d-block mx-auto border border-success" id="projects" name="projects" cols="40" rows="7"></textarea>
+                </div>
+
+                <div class="form-group text-center my-3">
+                    <label class="text-white font-weight-bold" for="skills">اذكر ابرز مهاراتك</label>
+                    <textarea class="d-block mx-auto border border-success" id="skills" name="skills" cols="40" rows="7"></textarea>
+                </div>
+
+                <div class="form-group text-center my-3">
+                    <label class="text-white font-weight-bold" for="about">اذكر فقرة تعريفية عنك لتجذب اصحاب العمل</label>
+                    <textarea class="d-block mx-auto border border-success" id="about" name="about" cols="40" rows="7"></textarea>
+                </div>
+
+                <input type="submit" class="d-block mx-auto btn btn-primary w-25 my-5" value="تسجيل">
+            </form>
+        </div>
+
+
+          
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD25gi67vTq8h3_2Go0f5ixKIqDaf-lHH0",
+    authDomain: "graduation-project-4b211.firebaseapp.com",
+    databaseURL: "https://graduation-project-4b211.firebaseio.com",
+    projectId: "graduation-project-4b211",
+    storageBucket: "graduation-project-4b211.appspot.com",
+    messagingSenderId: "469421901926",
+    appId: "1:469421901926:web:d33e6e1088ba3f8e1e05a7",
+    measurementId: "G-CJS7KWJ2B9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db=firebase.firestore();
+</script>
+
+
+<script>
+    let phone=sessionStorage.getItem("newUserPhone");
+    let newUser=JSON.parse(sessionStorage.getItem("newUserObj"));
+    let form=document.getElementById("workerForm");
+    form.addEventListener('submit',evt=>{
+        evt.preventDefault();
+        let exp=form["exp"].value;
+        let proj=form["projects"].value;
+        let skills=form["skills"].value;
+        let about=form["about"].value;
+
+        newUser.PP=proj;
+        newUser.PE=exp;
+        newUser.Skills=skills;
+        newUser.About=about;
+
+        db.collection("Users").doc(phone).set(newUser).then(done=>{
+            alert("تم التسجيل بنجاح!");
+            window.location.replace("index.html");
+        });
+
+        console.log(newUser);
+        console.log(phone);
+    })
+</script>
+
+
+    </body>
+
+</html>

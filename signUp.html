@@ -1,0 +1,133 @@
+<html>
+
+    <head>
+        <title>مُزارعنا</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="./styles/style.css" rel="stylesheet" type="text/css">
+        <link href="./styles/signUpStyle.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <main>
+            <div>
+            <div>
+                <h2 class="text-center text-white pt-4">التسجيل</h2>
+            </div>
+
+            <div class="d-flex text-white mt-5 justify-content-center">
+                <form id="signup-form" class="form-div py-5 w-50" action="#" method="POST">
+                    
+                <div class="form-group row justify-content-center">
+                    <input class="col-sm-4 form-control border border-success" id="fname" type="text" name="fname" required>
+                    <label class="col-sm-3 font-weight-bold" for="fname">الاسم الاول</label>
+                    <br/>
+                </div>
+
+                <div class="form-group row justify-content-center">
+                    <input class="col-sm-4 form-control border border-success" id="lname" type="text" name="lname" required>
+                    <label class="col-sm-3 font-weight-bold" for="lname">اسم العائلة</label>
+                    <br/></div>
+
+                    <div class="form-group row justify-content-center">
+                    <input class="col-sm-4 form-control border border-success" id="age" type="number" name="age" required>
+                    <label class="col-sm-3 font-weight-bold" for="age">العمر</label>
+                    <br/></div>
+
+                    <div class="form-group row justify-content-center">
+                    <input class="col-sm-4 form-control border border-success" id="pass" type="password" name="pass" required>
+                    <label class="col-sm-3 font-weight-bold" for="pass">كلمة المرور</label>
+                    <br/></div>
+
+                    <div class="form-group row justify-content-center">
+                    <input class="col-sm-4 form-control border border-success" id="repass" type="password" name="repass" required>
+                    <label class="col-sm-3 font-weight-bold" for="repass">اعد كتابة كلمة المرور</label>
+                    <br/></div>
+                    
+                    
+                    <div class="form-group row justify-content-center mb-0">
+                    <input class="col-sm-4 form-control border border-success mb-3" id="phone" type="number" name="phone" required>
+                    <label class="col-sm-3 font-weight-bold" for="phone">رقم الهاتف</label>
+                    </div>
+
+                    <div class="form-group text-center row justify-content-center">
+                    <select class="col-sm-4 form-control border border-success" id="city" name="city" required>
+                        <option value="عمان"> عمان </option>
+                        <option value="الزرقاء">الزرقاء</option>
+                        <option value="معان">معان</option>
+                        <option value="المفرق">المفرق</option>
+                        <option value="العقبة">العقبة</option>
+                        <option value="الكرك">الكرك</option>
+                        <option value="جرش">جرش</option>
+                        <option value="عجلون">عجلون</option>
+                        <option value="السلط">السلط</option>
+						<option value="مادبا">مادبا</option>
+						<option value="اربد">اربد</option>
+						<option value="الطفيلة">الطفيلة</option>
+                    </select>
+                    <label class="col-sm-3 font-weight-bold text-left" for="city">المدينة</label>
+                    <br/>
+                </div>
+
+
+                    <div class="form-group text-center justify-content-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-5">
+                                    <select id="role-select" class="form-control border border-success" id="role" name="role" required>
+                                        <option value="1">مستخدم</option>
+                                        <option value="2">صاحب عمل او شركة</option>
+                                        <option value="3">مهندس زراعي</option>
+                                        <option value="4">عامل مزارع</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="col-sm-3 text-left px-0">
+                                    <label class="font-weight-bold" for="role">الدور</label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                    <div id="sub" class="form-group text-center">
+                    <input type="submit" class="btn btn-primary w-25" value="التسجيل">
+                        </div>
+
+                </form>
+            </div>
+            </div>
+        </main>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD25gi67vTq8h3_2Go0f5ixKIqDaf-lHH0",
+    authDomain: "graduation-project-4b211.firebaseapp.com",
+    databaseURL: "https://graduation-project-4b211.firebaseio.com",
+    projectId: "graduation-project-4b211",
+    storageBucket: "graduation-project-4b211.appspot.com",
+    messagingSenderId: "469421901926",
+    appId: "1:469421901926:web:d33e6e1088ba3f8e1e05a7",
+    measurementId: "G-CJS7KWJ2B9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db=firebase.firestore();
+</script>
+
+
+<script src="./styles/signUpScripts.js"></script>
+    </body>
+</html>

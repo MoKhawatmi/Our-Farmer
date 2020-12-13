@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>مُزارعنا</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="./styles/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <script src="./scripts/includeHeader.js" charset="UTF-8"></script>
+
+        <main>
+            <div class="container text-center my-5">
+                <div class="flex-row justify-content-center mx-auto text-center">
+                    <form id="addPostForm" method="POST">
+                <div class="flex-row justify-content-center mx-auto text-center">
+                    <input class="border border-success" type="text" name="title" placeholder="عنوان المنشور">
+                    <h5 class="text-success d-inline">العنوان</h5>
+                </div> 
+                <div class="flex-row justify-content-center mx-auto text-center mt-2">
+                    <h5 class="text-success">نص المنشور</h5>
+                    <textarea style="text-align: right;" cols="50" rows="8" name="text" class="border border-success"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success mt-3 w-25">نشر</button>
+        
+                </form>
+            </div>
+            </div>
+        </main>
+
+        <script src="./scripts/includeFooter.js" charset="UTF-8"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD25gi67vTq8h3_2Go0f5ixKIqDaf-lHH0",
+    authDomain: "graduation-project-4b211.firebaseapp.com",
+    databaseURL: "https://graduation-project-4b211.firebaseio.com",
+    projectId: "graduation-project-4b211",
+    storageBucket: "graduation-project-4b211.appspot.com",
+    messagingSenderId: "469421901926",
+    appId: "1:469421901926:web:d33e6e1088ba3f8e1e05a7",
+    measurementId: "G-CJS7KWJ2B9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db=firebase.firestore();
+</script>
+
+<script>
+    let loggedUserId=localStorage.getItem('userId');
+    let form=document.getElementById('addPostForm');
+    form.addEventListener('submit',evt=>{
+        evt.preventDefault();
+    db.collection("Users").doc(loggedUserId).collection("Posts").add(
+    {
+        Title:form["title"].value,
+        Text:form["text"].value,
+        counter:"100"
+    }
+    ).then(res=>{
+        alert("تمت اضافة المنشور بنجاح");
+        window.location.href=`./profile.html?userId=${loggedUserId}`;
+    });
+    })
+    
+</script>
+    </body>
+</html>

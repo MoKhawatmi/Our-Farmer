@@ -1,0 +1,62 @@
+
+.checked {
+    color: orange;
+  }
+
+  .stars li:hover{
+    color: orange;
+    cursor: pointer;
+}
+
+.posts{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+}
+
+.answer{
+    background-color: #008888;
+}
+
+.duh{
+    display: inline-block;
+    position: relative;
+}
+
+.nuh{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.nuh:hover{
+    background-color: silver;
+}
+
+.skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    background-color: #008888;
+}
+
+.removeImage{
+    position: absolute;
+    color: whitesmoke;
+    top:0;
+    right:0;
+    z-index: 1000;
+    margin:5px;
+    cursor: pointer;
+}
+
+.removeImage:hover{
+    color: red;
+}
